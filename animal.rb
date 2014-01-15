@@ -1,5 +1,6 @@
 # Inheritance
-#require_relative 'climbing'
+require_relative 'climbing'
+require_relative 'talk'
 
 # Define an parent Animal class
 class Animal
@@ -10,6 +11,7 @@ end
 
 # Define a Mammal class that inherits from Animal
 class Mammal < Animal
+  include Talk
   def eat
     puts "i can eat! yum yum yum"
   end
@@ -20,8 +22,7 @@ end
 
 # Define a Monkey class that inherits from Mammal
 class Monkey < Mammal
-#  include Climbing
-
+  include Climbing
   def swing
     puts "i can swing!"
   end
@@ -45,6 +46,8 @@ timmy.move
 timmy.eat
 timmy.swing
 timmy.speak
+timmy.climb
+timmy.say("Soup brew")
 
 # timmy.climb
 
