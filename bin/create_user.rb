@@ -2,7 +2,7 @@ require_relative '../lib/user'
 
 
 def create_user(email, password, password_confirmation)
-  user = User.new(email, password, password_confirmation)
+  user = TOM::User.new(email, password, password_confirmation)
   user.encrypt_password
   user.save!
 end
