@@ -1,12 +1,14 @@
 require 'bcrypt'
 require 'pry'
 require_relative '../logger'
+require_relative './authenticate'
 
 class UserError < StandardError; end
 
 module TOM
   class User
-    include TOM::Logger
+    include Logger
+    extend Authenticator
 
     PWD_FILENAME = "#{File.dirname(__FILE__)}/../passwd"
 
